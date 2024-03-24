@@ -1,5 +1,9 @@
 from decimal import Decimal, ROUND_HALF_UP
+
+
 class ArbitrageList:
+    """"List for arbitrage scores"""
+
     def __init__(self):
         self.scores = {}
         self.sorted_keys = []
@@ -12,6 +16,6 @@ class ArbitrageList:
         self.sorted_keys = sorted(self.scores, key=lambda x: abs(self.scores[x]), reverse=True)
 
     def display_arbitrageList(self):
-        if self.sorted_keys : print("ArbitrageList:")
+        if self.sorted_keys: print("ArbitrageList:")
         for i, key in enumerate(self.sorted_keys, start=1):
             print(f"{i}. {key}: {self.scores[key]}")

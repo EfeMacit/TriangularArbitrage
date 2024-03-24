@@ -1,12 +1,13 @@
 import bisect
 from arbitrageList import ArbitrageList
+from config import orderbookpairs
+
+
 class Engine:
+    """"Applying arbitrage operations and updates arbitragelist"""
+
     def __init__(self):
-        self.orderbooks = ["btc/usdt", "btc/try", "btc/eur", "eth/btc", "eth/usdt", "eth/eur", "btc/jpy", "eth/jpy",
-                           "sol/eth", "sol/btc", "sol/eur", "sol/usdt","xrp/btc", "xrp/usdt", "xrp/eur", "xrp/eth",
-                           "ada/btc", "ada/usdt", "ada/eur", "ada/eth", "avax/btc", "avax/usdt", "avax/eur", "avax/eth",
-                           "dot/btc","dot/eur","dot/eth","dot/usdt","ltc/btc","ltc/eth","ltc/usdt","etc/btc",
-                           "etc/eth","etc/usdt","doge/btc","doge/usdt","doge/eur"]
+        self.orderbooks = orderbookpairs
         self.arbitragelist = ArbitrageList()
         self.combinations = self.getCombinations()
 
